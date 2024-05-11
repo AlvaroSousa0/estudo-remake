@@ -1,1 +1,0 @@
- Estudo de django adiado por motivo de notebook travar(denovo)
