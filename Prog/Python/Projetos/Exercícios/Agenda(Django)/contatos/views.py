@@ -33,6 +33,9 @@ def ver_contato(request, contato_id):
 
 def busca(request):
     termo = request.GET.get('termo')
+
+    if termo is None:
+        raise Http404()
     campos = Concat('nome', Value(' '), 'sobrenome')
 
     contatos = Contato.objects.annotate(
@@ -42,7 +45,6 @@ def busca(request):
     )
 
 
-    print(contatos.query)
     paginator = Paginator(contatos, 6)
 
     page = request.GET.get('p')
