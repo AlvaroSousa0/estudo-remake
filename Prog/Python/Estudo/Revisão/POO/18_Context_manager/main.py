@@ -23,11 +23,13 @@ from contextlib import contextmanager
 
 @contextmanager
 def myOpen(caminho_arquivo, modo):
-    print('Abrindo arquivo')
-    arquivo = open(caminho_arquivo, modo, encoding='utf8')
-    yield arquivo
-    print('Fechando arquivo')
-    arquivo.close()
+    try:
+        print('Abrindo arquivo')
+        arquivo = open(caminho_arquivo, modo, encoding='utf8')
+        yield arquivo
+    finally:
+        print('Fechando arquivo')
+        arquivo.close()
 
 with myOpen('testingContextManager.txt', 'a') as arquivo:
     arquivo.write('Linha1.2\n')
