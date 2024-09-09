@@ -18,10 +18,10 @@ def meu_planeta(metodo):
     return interno
 
 
-# @add_repr
-class Time:
-    def __init__(self, nome):
-        self.nome = nome
+# # @add_repr
+# class Time:
+#     def __init__(self, nome):
+#         self.nome = nome
 
 
 # @add_repr

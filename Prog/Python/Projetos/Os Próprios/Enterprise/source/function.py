@@ -2,7 +2,7 @@ import sqlite3
 from sqlite3 import Error
 
 def conexaoBanco():
-    caminho_db = '/home/alvaro/GitHub/Prog-E/Prog/Python/Projetos/Os Próprios/Enterpise/db/funcionarios.db'
+    caminho_db = '/home/alvaro/Documentos/GitHub/estudo-remake/Prog/Python/Projetos/Os Próprios/Enterprise/db/funcionarios.db'
     conexao = None
     try:
         conexao = sqlite3.connect(caminho_db)
@@ -65,8 +65,11 @@ def modificar_funcionario():
     
 
 def consultar_tabela():
-    cargo_filtro = input('\nDigite o cargo pelo qual deseja filtrar: ')
-    sql = f"SELECT * FROM funcionarios WHERE cargo='{cargo_filtro}'"
+    cargo_filtro = input('\nDigite o cargo pelo qual deseja filtrar, se não houver filtro, deixar vazio: ')
+    if len(cargo_filtro) == 0:
+        sql = 'SELECT * FROM funcionarios'
+    else:
+        sql = f"SELECT * FROM funcionarios WHERE cargo='{cargo_filtro}'"
     try:
         cursor = conexao.cursor()
         cursor.execute(sql)
