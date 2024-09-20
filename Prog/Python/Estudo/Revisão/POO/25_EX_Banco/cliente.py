@@ -1,0 +1,37 @@
+import contas
+
+
+class Pessoa:
+    def __init__(self, nome: str, idade: int) -> None:
+        self.nome = nome
+        self.idade = idade
+
+    @property
+    def nome(self):
+        return self._nome
+
+    @nome.setter
+    def nome(self, nome:str):
+        self._nome = nome
+
+    @property
+    def idade(self):
+        return self._idade
+
+    @idade.setter
+    def idade(self, idade:int):
+        self._idade = idade
+
+class Cliente(Pessoa):
+    def __init__(self, nome: str, idade: int):
+        super().__init__(nome, idade)
+        self.contas: contas.Conta | None = None
+
+if __name__ == '__main__':
+        
+    c1 = Cliente('José Ari', 71)
+    c1.contas = contas.ContaPoupanca(1, 234, 2376)
+    c1.contas.depositar(230)
+    c1.contas.sacar(2600)
+    c1.contas.sacar(5670)
+    c1.contas.sacar(6)

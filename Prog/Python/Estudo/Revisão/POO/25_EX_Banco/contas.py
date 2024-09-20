@@ -1,25 +1,25 @@
 from abc import ABC, abstractmethod
 
 class Conta(ABC):
-    def __init__(self, agencia:int, conta:int, saldo:int|float) -> None:
+    def __init__(self, agencia: int,conta: int, saldo: float = 0) -> None:
         self.agencia = agencia
         self.conta = conta
         self.saldo = saldo
 
     @abstractmethod
-    def sacar(self, valor:int|float) -> None:...
+    def sacar(self, valor: float) -> None:...
 
-    def depositar(self, valor:int|float) -> None:
+    def depositar(self, valor: float) -> None:
         self.saldo += valor
         self.aviso(f'Você depositou {valor}, saldo atual:')
 
 
-    def aviso(self,msg:str) -> None:
+    def aviso(self,msg: str) -> None:
         print(f'{msg} R${self.saldo}')
 
 
 class ContaPoupanca(Conta):
-    def sacar(self, valor:int|float) -> None:
+    def sacar(self, valor: float) -> None:
         if self.saldo >= valor:
             self.saldo -= valor
             self.aviso(f'Você sacou R${valor}, saldo restante:')
@@ -28,8 +28,8 @@ class ContaPoupanca(Conta):
 
 
 class ContaCorrente(Conta):
-    def sacar(self, valor:int|float) -> None:
-        self.limite = 150
+    def sacar(self, valor: float, limite: float) -> None:
+        self.limite = limite
         if valor > self.saldo and valor <= self.saldo+self.limite:
             self.diferenca = valor - self.saldo
             self.limite -= self.diferenca
