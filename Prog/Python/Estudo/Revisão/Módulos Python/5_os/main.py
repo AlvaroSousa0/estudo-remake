@@ -15,3 +15,6 @@ diretorio, arquivo = os.path.split(caminho)
 nome_arquivo, extensao_arquivo = os.path.splitext(arquivo)
 # print(nome_arquivo, extensao_arquivo)
 print(os.path.exists(caminho))
+l = [1,2,3,4]
+i = (1,2)
+print(l.index(i[0], i[1]))
