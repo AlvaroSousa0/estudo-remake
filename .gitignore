@@ -2,3 +2,5 @@
 venv
 .vscode
 .idea
+.sql 
+*.sqlite3
