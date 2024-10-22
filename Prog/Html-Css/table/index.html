@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table td, table th{
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        tfoot td, table th {
+            background: #ddd;
+        }
+        tfoot{
+            font-style: italic;
+        }
+        table caption {
+            caption-side: top;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    Lorem ipsum dolor sit amet consectetur 
+    <table>
+        <caption>Uma descrição para a tabela</caption>
+        <thead>
+            <tr>
+                <th>Título 1</th>
+                <th>Título 2</th>
+                <th>Título 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">Corpo 1</td>
+                
+                <td>Corpo 3</td>
+            </tr>
+            <tr>
+
+                <td>Corpo 3</td>
+            </tr>
+           
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Corpo 3</td>
+                <td>Corpo 2</td>
+                <td>Corpo 1</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
