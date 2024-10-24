@@ -1,7 +1,10 @@
 {% include 'global/partials/head.html' %}
-<body>
-    <div>
-        <h1>{% block 'corpo' %}Olá Mundo{% endblock %}</h1>
-    </div>
+{% include "global/partials/menu.html" %}
+
+<h1>{% block 'corpo' %}Olá Mundo{% endblock %}</h1>
+
+<main class="content">
+   {% block posts %}{% endblock posts %}
+</main>
 </body>
 </html>

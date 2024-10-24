@@ -1,5 +1,10 @@
 {% extends "global/index.html" %}
 
-{% block 'corpo' %}Olá Mundo from blog{%endblock%}
+
+{% block 'corpo' %}{{ text }}{%endblock%}
+
+{% block posts %}
+    {% include "global/partials/postblock.html" %}
+{% endblock posts %}
 </body>
 </html>

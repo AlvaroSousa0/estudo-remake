@@ -1,6 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
-    background-color: rgb(122, 122, 122);
+    background-color: rgb(217, 217, 217);
     font-family: sans-serif;
     font-size: 15pt;
-    color: rgb(35, 35, 25);
+    color: rgb(29, 29, 29);
+}
+ul{
+    float: right;
+    display: block;
+    color: rgb(29, 29, 29);
+    margin: 20px;
+}
+li{
+    padding: 10px;
+    display: inline;
+}
+li:hover{
+    text-transform: uppercase;
+}
+a{
+    text-decoration: none;
+    color: rgb(29, 29, 29);
 }
